@@ -1,14 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { Pages, db} = require('../../models/index');
+const { Page, db} = require('../../models/db');
 
 
-router.get('/', function(req, res, next) {
-
-  Pages.findAll({where: {
-    userId: req.session.userId
-  }}).then(posts => {
-    res.json(posts)
+router.post('/', function(req, res, next) {
+  Page.findAll().then(pages => {
+    res.send(pages)
   }).catch(next)
 })
 

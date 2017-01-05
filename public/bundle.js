@@ -30616,7 +30616,7 @@
 	    },
 	    searchPages: function searchPages(e, search) {
 	      e.preventDefault();
-	      dispatch((0, _searchForm.searchIt)({ search: search }));
+	      dispatch((0, _searchForm.searchPages)({ search: search }));
 	    }
 	
 	  };
@@ -30699,7 +30699,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.searchIt = exports.receivePages = exports.updateSearchForm = undefined;
+	exports.searchPages = exports.receivePages = exports.updateSearchForm = undefined;
 	
 	var _constants = __webpack_require__(209);
 	
@@ -30723,7 +30723,7 @@
 	  };
 	};
 	
-	var searchIt = exports.searchIt = function searchIt(search) {
+	var searchPages = exports.searchPages = function searchPages(search) {
 	  return function (dispatch) {
 	    _axios2.default.post('/api/pages', { search: search }).then(function (res) {
 	      dispatch(receivePages(res.data));
@@ -30780,6 +30780,7 @@
 	exports.default = function (props) {
 	
 	  var pages = props.pages;
+	  console.log(props);
 	
 	  return _react2.default.createElement(
 	    'div',
@@ -30797,8 +30798,8 @@
 	          'div',
 	          { className: 'col-xs-10 col-xs-offset-1', key: page.id },
 	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { className: 'thumbnail', to: '' + page.uri },
+	            'a',
+	            { className: 'thumbnail', href: '' + page.uri },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'caption' },

@@ -15,7 +15,7 @@ export const receivePages = (pages) => {
   }
 }
 
-export const searchIt = (search) => {
+export const searchPages = (search) => {
   return dispatch => {
     axios.post('/api/pages', {search})
       .then(res => {

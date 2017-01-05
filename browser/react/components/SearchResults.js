@@ -4,6 +4,7 @@ import {Link} from 'react-router';
 export default function (props) {
 
   const pages = props.pages;
+  console.log(props);
 
   return (
     <div>
@@ -12,13 +13,13 @@ export default function (props) {
         {
           pages && pages.map(page => (
             <div className="col-xs-10 col-xs-offset-1" key={ page.id }>
-              <Link className="thumbnail" to={`${page.uri}`}>
+              <a className="thumbnail" href={`${page.uri}`}>
                 <div className="caption">
                   <p style={{fontSize: '1.6em'}}>
                     <span>{ page.title }</span>
                   </p>
                 </div>
-              </Link>
+              </a>
             </div>
           ))
         }
