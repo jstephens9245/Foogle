@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-// const usersRoute = require('./users');
+const pagesRoute = require('./pages');
 
 router.get('/', function(req, res) {
   res.send('API HOME');
 })
 
-// router.use('/users', usersRoute);  example
+router.use('/pages', pagesRoute);
 
 
 module.exports = router;

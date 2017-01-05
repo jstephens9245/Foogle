@@ -7,7 +7,7 @@ export default function (props) {
 
   return (
     <div>
-      <h3 className="col-xs-10 col-xs-offset-1">Pages</h3>
+      <h3 className="col-xs-10 col-xs-offset-1">Page-links</h3>
       <div className="row">
         {
           pages && pages.map(page => (
